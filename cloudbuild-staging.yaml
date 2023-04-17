@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--build-arg', '_RAILS_MASTER_KEY=$_RAILS_MASTER_KEY', '--build-arg', '_ACCESS_TOKEN=$_ACCESS_TOKEN', '-t', '$_IMAGE_NAME:$COMMIT_SHA', '.',  '-f', '$_DOCKERFILE_NAME']
+    args: ['build', '--build-arg', '_ACCESS_TOKEN=$_ACCESS_TOKEN', '-t', '$_IMAGE_NAME:$COMMIT_SHA', '.',  '-f', '$_DOCKERFILE_NAME']
     dir: $_DOCKERFILE_DIR
     id: Build
     timeout: "2400s"
